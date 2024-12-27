@@ -1,0 +1,8 @@
+CREATE TABLE plan_tier (
+    idplan_tier INT PRIMARY KEY AUTO_INCREMENT,
+    pid_tier INT NOT NULL,
+    tier ENUM('IO', 'IS', 'IF', 'IC') NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (pid_tier) REFERENCES plans(pid)
+);
